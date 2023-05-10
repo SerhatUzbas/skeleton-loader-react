@@ -1,0 +1,46 @@
+{
+  "name": "srht-skeleton-loader2",
+  "version": "0.0.2",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SerhatUzbas/react-skeleton-loaders.git"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && node esbuild.js && tsc"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.6",
+    "@types/react-dom": "^18.0.10",
+    "esbuild": "^0.17.11",
+    "esbuild-node-externals": "^1.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@types/react": "^18.0.28",
+    "prettier": "^2.8.4",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "rollup": "^3.19.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": "^4.9.5",
+    "@emotion/react": "^11.10.6",
+    "@mantine/core": "^6.0.1",
+    "@mantine/hooks": "^6.0.1",
+    "tslib": "^2.5.0",
+    "framer-motion": "^10.8.5"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
