@@ -1,7 +1,6 @@
-import { transitions } from '@mantine/core/lib/Transition/transitions'
 import { motion, Variants, Easing } from 'framer-motion'
 import { useContext } from 'react'
-import { SkeletonContext } from './StyleProvider'
+import { SkeletonContext } from './StyleProvider.js'
 
 export interface RowProps {
   variants?: Variants
@@ -52,9 +51,20 @@ export const Row = ({
 
   return (
     <motion.div
-      initial={!!variants || isSlide ? undefined : 'hidden'}
-      animate={!!variants || isSlide ? undefined : 'show'}
-      variants={isSlide ? undefined : variants || defaultVariant}
+      // initial={!!variants || isSlide ? undefined : 'hidden'}
+      // animate={!!variants || isSlide ? undefined : 'show'}
+      // variants={isSlide ? undefined : variants || defaultVariant}
+      animate={!isSlide ? { opacity: opacityPoints || globalPoints } : undefined}
+      transition={
+        !isSlide
+          ? {
+              duration: duration || globalDuration,
+              repeatType: 'reverse',
+              ease: easing || globalEasing,
+              repeat: Infinity
+            }
+          : undefined
+      }
       style={{
         display: 'flex',
         justifyContent: 'flex-start',
@@ -65,7 +75,7 @@ export const Row = ({
         border: 'none'
       }}
     >
-      {animationType === 'slide' && (
+      {isSlide && (
         <motion.div
           animate={{ translateX: '2000%' }}
           transition={{

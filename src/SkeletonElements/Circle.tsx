@@ -1,6 +1,6 @@
 import { Easing, motion } from 'framer-motion'
 import { useContext } from 'react'
-import { SkeletonContext } from './StyleProvider'
+import { SkeletonContext } from './StyleProvider.js'
 
 interface CircleProps {
   size?: number
@@ -11,14 +11,7 @@ interface CircleProps {
   easing?: Easing | Easing[]
 }
 
-export const Circle = ({
-  size = 100,
-  duration,
-  color,
-  opacityPoints,
-  animationType,
-  easing
-}: CircleProps) => {
+export const Circle = ({ size = 100, duration, color, opacityPoints, animationType, easing }: CircleProps) => {
   const {
     duration: globalDuration,
     color: globalColor,
@@ -32,9 +25,7 @@ export const Circle = ({
 
   return (
     <motion.div
-      animate={
-        !isSlide ? { opacity: opacityPoints || globalPoints } : undefined
-      }
+      animate={!isSlide ? { opacity: opacityPoints || globalPoints } : undefined}
       transition={
         !isSlide
           ? {

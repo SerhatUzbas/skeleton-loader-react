@@ -21,6 +21,12 @@ const initialTheme: SkeletonProps = {
 
 export const SkeletonContext = createContext(initialTheme)
 
-export const SkeletonProvider = ({ children, theme = initialTheme }: { children: React.ReactNode; theme?: SkeletonProps }) => {
+export const SkeletonProvider = ({
+  children,
+  theme = initialTheme
+}: {
+  children: React.ReactNode
+  theme?: SkeletonProps
+}) => {
   return <SkeletonContext.Provider value={theme}>{children}</SkeletonContext.Provider>
 }

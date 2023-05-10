@@ -1,11 +1,11 @@
 import { useContext } from 'react'
 import { useElementSize } from '@mantine/hooks'
-import { Circle } from './Circle'
-import { ImageLoader, ImageLoaderProps } from './ImageLoader'
-import { Row, RowProps } from './Row'
+import { Circle } from './Circle.js'
+import { ImageLoader, ImageLoaderProps } from './ImageLoader.js'
+import { Row, RowProps } from './Row.js'
 import { motion } from 'framer-motion'
-import { BarChartLoader, BarChartLoaderProps } from './BarChartLoader'
-import { SkeletonContext } from './StyleProvider'
+import { BarChartLoader, BarChartLoaderProps } from './BarChartLoader.js'
+import { SkeletonContext } from './StyleProvider.js'
 
 interface CompactBarChartProps extends Omit<BarChartLoaderProps, 'width'> {
   barChartWidth?: string | number
@@ -146,10 +146,7 @@ export const CompactLoader = ({
               <Row
                 variants={stagRow ? item : undefined}
                 key={idx}
-                height={
-                  rowProps?.height ||
-                  (height - rowGap * (rowCount! - 1) - 40) / rowCount!
-                }
+                height={rowProps?.height || (height - rowGap * (rowCount! - 1) - 40) / rowCount!}
                 width='100%'
                 color={color}
                 animationType={animationType}
@@ -160,21 +157,12 @@ export const CompactLoader = ({
       )}
       {!!imageLoaderOrder && (
         <div style={{ order: imageLoaderOrder }}>
-          <ImageLoader
-            withImage
-            bg={color}
-            animationType={animationType}
-            {...imageLoaderProps}
-          />
+          <ImageLoader withImage bg={color} animationType={animationType} {...imageLoaderProps} />
         </div>
       )}
       {!!circleLoaderOrder && (
         <div style={{ order: circleLoaderOrder }}>
-          <Circle
-            size={circleLoaderSize}
-            color={color}
-            animationType={animationType}
-          />
+          <Circle size={circleLoaderSize} color={color} animationType={animationType} />
         </div>
       )}
       {!!barChartLoaderOrder && (
@@ -184,12 +172,7 @@ export const CompactLoader = ({
             order: barChartLoaderOrder
           }}
         >
-          <BarChartLoader
-            color={color}
-            bg={bg}
-            duration={duration}
-            {...barChartProps}
-          />
+          <BarChartLoader color={color} bg={bg} duration={duration} {...barChartProps} />
         </div>
       )}
       {/* {!!graphLoaderOrder && (

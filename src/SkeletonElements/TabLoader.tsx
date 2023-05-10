@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { SkeletonContext } from './StyleProvider'
+import { SkeletonContext } from './StyleProvider.js'
 import { Easing, motion, Variants } from 'framer-motion'
 
 interface TabLoaderProps {

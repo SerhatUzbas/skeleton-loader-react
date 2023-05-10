@@ -1,7 +1,7 @@
 import { useElementSize } from '@mantine/hooks'
 import { motion, Easing } from 'framer-motion'
 import { useContext } from 'react'
-import { SkeletonContext } from './StyleProvider'
+import { SkeletonContext } from './StyleProvider.js'
 
 export interface BarChartLoaderProps {
   width?: string | number
@@ -63,14 +63,10 @@ export const BarChartLoader = ({
           <motion.div
             key={i}
             initial={{
-              height: isEqualBarHeight
-                ? equalRandomHeight
-                : `${Math.random() * (100 - 45) + 45}%`
+              height: isEqualBarHeight ? equalRandomHeight : `${Math.random() * (100 - 45) + 45}%`
             }}
             animate={{
-              height: isEqualBarHeight
-                ? equalRandomHeight
-                : `${Math.random() * (100 - 45) + 45}%`
+              height: isEqualBarHeight ? equalRandomHeight : `${Math.random() * (100 - 45) + 45}%`
             }}
             transition={{
               duration: duration || globalDuration,

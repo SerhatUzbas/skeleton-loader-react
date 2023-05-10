@@ -2,7 +2,7 @@ import { Box, BoxProps, Center, Flex, Image } from '@mantine/core'
 import { useElementSize } from '@mantine/hooks'
 import { motion, Variants, Variant, Easing } from 'framer-motion'
 import { useContext } from 'react'
-import { SkeletonContext } from './StyleProvider'
+import { SkeletonContext } from './StyleProvider.js'
 
 export interface ImageLoaderProps {
   withImage?: boolean
@@ -46,9 +46,7 @@ export const ImageLoader = ({
 
   return (
     <motion.div
-      animate={
-        !isSlide ? { opacity: opacityPoints || globalPoints } : undefined
-      }
+      animate={!isSlide ? { opacity: opacityPoints || globalPoints } : undefined}
       transition={
         !isSlide
           ? {
