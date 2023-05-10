@@ -10,8 +10,7 @@ esbuild
       './src/SkeletonElements/ImageLoader.tsx',
       './src/SkeletonElements/StyleProvider.tsx',
       './src/SkeletonElements/TabLoader.tsx',
-      './src/SkeletonElements/BarChartLoader.tsx',
-      './src/useConsoleLogger.tsx'
+      './src/SkeletonElements/BarChartLoader.tsx'
     ],
     outdir: './dist',
     bundle: true,
