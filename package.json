@@ -35,6 +35,9 @@
     "tslib": "^2.5.0",
     "framer-motion": "^10.8.5"
   },
+  "dependencies": {
+    "framer-motion": "^10.8.5"
+  },
   "engines": {
     "node": ">=16"
   }
