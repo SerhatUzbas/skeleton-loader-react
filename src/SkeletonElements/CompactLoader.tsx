@@ -4,13 +4,17 @@ import { Circle } from './Circle.js'
 import { ImageLoader, ImageLoaderProps } from './ImageLoader.js'
 import { Row, RowProps } from './Row.js'
 import { motion } from 'framer-motion'
-import { BarChartLoader, BarChartLoaderProps } from './BarChartLoader.js'
 import { SkeletonContext } from './StyleProvider.js'
+import { ChartLoader, ChartLoaderProps } from './ChartLoader.js'
 
-interface CompactBarChartProps extends Omit<BarChartLoaderProps, 'width'> {
+interface CompactBarChartProps extends Omit<ChartLoaderProps, 'width'> {
   barChartWidth?: string | number
 }
 interface CompactRowProps extends Omit<RowProps, 'width'> {
+  rowsWidth?: string | number
+}
+
+interface CompactImageLoaderProps extends Omit<ImageLoaderProps, 'src'> {
   rowsWidth?: string | number
 }
 
@@ -24,6 +28,7 @@ interface CompactLoaderProps {
   // ImageLoaderProps
 
   imageLoaderOrder?: number
+  imageSrc?: string
   imageLoaderProps?: ImageLoaderProps
 
   // RowProps
@@ -66,6 +71,7 @@ export const CompactLoader = ({
   circleLoaderSize,
 
   imageLoaderOrder,
+  imageSrc,
   imageLoaderProps,
 
   barChartLoaderOrder,
@@ -157,7 +163,7 @@ export const CompactLoader = ({
       )}
       {!!imageLoaderOrder && (
         <div style={{ order: imageLoaderOrder }}>
-          <ImageLoader withImage bg={color} animationType={animationType} {...imageLoaderProps} />
+          <ImageLoader src={imageSrc} withImage bg={color} animationType={animationType} {...imageLoaderProps} />
         </div>
       )}
       {!!circleLoaderOrder && (
@@ -172,7 +178,7 @@ export const CompactLoader = ({
             order: barChartLoaderOrder
           }}
         >
-          <BarChartLoader color={color} bg={bg} duration={duration} {...barChartProps} />
+          <ChartLoader padding={0} color={color} bg={bg} duration={duration} {...barChartProps} />
         </div>
       )}
       {/* {!!graphLoaderOrder && (

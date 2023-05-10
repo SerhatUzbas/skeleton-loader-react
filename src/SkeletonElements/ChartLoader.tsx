@@ -3,8 +3,9 @@ import { motion, Easing } from 'framer-motion'
 import { useContext } from 'react'
 import { SkeletonContext } from './StyleProvider.js'
 
-export interface BarChartLoaderProps {
+export interface ChartLoaderProps {
   width?: string | number
+  height?: string | number
   padding?: number
   barCount?: number
   color?: string
@@ -14,17 +15,18 @@ export interface BarChartLoaderProps {
   easing?: Easing | Easing[]
   isEqualBarHeight?: boolean
 }
-export const BarChartLoader = ({
+export const ChartLoader = ({
   padding = 20,
   width = '100%',
+  height = '100%',
   barCount = 5,
   barGap = 20,
   bg,
   color,
-  duration = 0.4,
+  duration,
   easing = 'anticipate',
   isEqualBarHeight
-}: BarChartLoaderProps) => {
+}: ChartLoaderProps) => {
   const { ref, width: totalWidth } = useElementSize()
 
   const {
@@ -43,7 +45,7 @@ export const BarChartLoader = ({
       ref={ref}
       style={{
         width,
-        height: '100%',
+        height,
         display: 'flex',
         flexDirection: 'column',
         padding,

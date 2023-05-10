@@ -23,6 +23,7 @@ export const TabLoader = ({
   height = '100%',
   tabCount = 3,
   tabWidth,
+  tabHeight = '33%',
   bg,
   color,
   opacityPoints,
@@ -76,8 +77,8 @@ export const TabLoader = ({
       {[...Array(tabCount)].map((_, i) => (
         <motion.div
           style={{
-            width: actualTabWidth || tabWidth,
-            height: '33%',
+            width: tabWidth || actualTabWidth,
+            height: tabHeight,
             borderRadius: 12,
             background: color || defaultColor
           }}

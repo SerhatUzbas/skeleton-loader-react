@@ -1,7 +1,7 @@
 export { ImageLoader } from './SkeletonElements/ImageLoader.js'
 export { Row } from './SkeletonElements/Row.js'
 export { TabLoader } from './SkeletonElements/TabLoader.js'
-export { BarChartLoader } from './SkeletonElements/BarChartLoader.js'
+export { ChartLoader } from './SkeletonElements/ChartLoader.js'
 export { Circle } from './SkeletonElements/Circle.js'
 export { CompactLoader } from './SkeletonElements/CompactLoader.js'
 export { SkeletonProvider } from './SkeletonElements/StyleProvider.js'

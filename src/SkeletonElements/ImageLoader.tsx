@@ -20,13 +20,13 @@ export interface ImageLoaderProps {
 }
 
 export const ImageLoader = ({
-  withImage,
+  withImage = true,
   src,
   imageHeight = '40%',
   imageWidth = '40%',
   radius = 12,
   width,
-  height = 200,
+  height,
   duration,
   bg,
   animationType,
@@ -52,7 +52,7 @@ export const ImageLoader = ({
           ? {
               duration: duration || globalDuration,
               repeatType: 'reverse',
-              ease: 'easeIn',
+              easing: easing || globalEasing,
               repeat: Infinity
             }
           : undefined
