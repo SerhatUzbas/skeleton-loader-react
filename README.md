@@ -147,10 +147,10 @@ const MyComponent = () => {
 
 ### CompactLoader
 
+> CompactLoader is a special loader that contains all kind of loader in one component. Developer can arrange order and direction of components and modify them.
+
 ```tsx
 import { CompactLoader } from 'skeleton-react-loader'
-
-> CompactLoader is a special loader that contains all kind of loader in one component. Developer can arrange order and direction of components and modify them.
 
 const MyComponent = () => {
   return <CompactLoader height={400} />
