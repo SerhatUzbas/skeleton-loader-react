@@ -1,6 +1,4 @@
-import { Box, BoxProps, Center, Flex, Image } from '@mantine/core'
-import { useElementSize } from '@mantine/hooks'
-import { motion, Variants, Variant, Easing } from 'framer-motion'
+import { motion, Easing } from 'framer-motion'
 import { useContext } from 'react'
 import { SkeletonContext } from './StyleProvider.js'
 

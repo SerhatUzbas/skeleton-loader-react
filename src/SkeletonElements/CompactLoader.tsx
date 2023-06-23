@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { useElementSize } from '@mantine/hooks'
-import { Circle } from './Circle.js'
+import { Circle, CircleProps } from './Circle.js'
 import { ImageLoader, ImageLoaderProps } from './ImageLoader.js'
 import { Row, RowProps } from './Row.js'
 import { motion } from 'framer-motion'
@@ -40,6 +40,7 @@ interface CompactLoaderProps {
   // CircleProps
   circleLoaderSize?: number
   circleLoaderOrder?: number
+  circleLoaderProps?: CircleProps
 
   //BarChartLoaderProps
   barChartLoaderOrder?: number
@@ -69,6 +70,7 @@ export const CompactLoader = ({
 
   circleLoaderOrder,
   circleLoaderSize,
+  circleLoaderProps,
 
   imageLoaderOrder,
   imageSrc,
@@ -168,7 +170,7 @@ export const CompactLoader = ({
       )}
       {!!circleLoaderOrder && (
         <div style={{ order: circleLoaderOrder }}>
-          <Circle size={circleLoaderSize} color={color} animationType={animationType} />
+          <Circle size={circleLoaderSize} color={color} animationType={animationType} {...circleLoaderProps} />
         </div>
       )}
       {!!barChartLoaderOrder && (

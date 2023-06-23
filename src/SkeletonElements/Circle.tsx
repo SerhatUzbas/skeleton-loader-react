@@ -2,7 +2,7 @@ import { Easing, motion } from 'framer-motion'
 import { useContext } from 'react'
 import { SkeletonContext } from './StyleProvider.js'
 
-interface CircleProps {
+export interface CircleProps {
   size?: number
   color?: string
   opacityPoints?: number[]

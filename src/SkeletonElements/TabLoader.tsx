@@ -15,6 +15,7 @@ interface TabLoaderProps {
   duration?: number
   easing?: Easing | Easing[]
   animationType?: 'fade' | 'slide'
+  radius?: number
 }
 
 export const TabLoader = ({
@@ -29,6 +30,7 @@ export const TabLoader = ({
   opacityPoints,
   duration,
   easing,
+  radius = 12,
   animationType
 }: TabLoaderProps) => {
   const {
@@ -69,7 +71,7 @@ export const TabLoader = ({
         justifyContent: 'space-evenly',
         alignItems: 'center',
         background: bg || defaultBg,
-        borderRadius: 12,
+        borderRadius: radius,
         overflow: 'hidden',
         position: 'relative'
       }}

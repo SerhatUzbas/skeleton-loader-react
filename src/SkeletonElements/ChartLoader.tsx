@@ -14,6 +14,7 @@ export interface ChartLoaderProps {
   duration?: number
   easing?: Easing | Easing[]
   isEqualBarHeight?: boolean
+  radius?: number
 }
 export const ChartLoader = ({
   padding = 20,
@@ -24,8 +25,9 @@ export const ChartLoader = ({
   bg,
   color,
   duration,
-  easing = 'anticipate',
-  isEqualBarHeight
+  easing,
+  isEqualBarHeight,
+  radius = 12
 }: ChartLoaderProps) => {
   const { ref, width: totalWidth } = useElementSize()
 
@@ -49,7 +51,8 @@ export const ChartLoader = ({
         display: 'flex',
         flexDirection: 'column',
         padding,
-        background: bg || globalBg
+        background: bg || globalBg,
+        borderRadius: radius
       }}
     >
       <motion.div
