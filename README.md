@@ -1,4 +1,4 @@
-# use-typewriter-animation
+# skeleton-loader-react
 
 > A skeleton loader library for React.
 
