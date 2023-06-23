@@ -4,7 +4,7 @@ import { createContext, ReactNode } from 'react'
 export interface SkeletonProps {
   bg?: string
   color?: string
-  animationType?: 'slide' | 'fade'
+  animationType?: 'fade'
   duration?: number
   easing?: Easing | Easing[]
   opacityPoints?: number[]

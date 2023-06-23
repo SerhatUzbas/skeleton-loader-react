@@ -20,22 +20,18 @@ export const Circle = ({ size = 100, duration, color, opacityPoints, animationTy
     animationType: globalType
   } = useContext(SkeletonContext)
 
-  const activeAnimationType = animationType || globalType
-  const isSlide = activeAnimationType === 'slide'
+  // const activeAnimationType = animationType || globalType
+  // const isSlide = activeAnimationType === 'slide'
 
   return (
     <motion.div
-      animate={!isSlide ? { opacity: opacityPoints || globalPoints } : undefined}
-      transition={
-        !isSlide
-          ? {
-              duration: duration || globalDuration,
-              repeatType: 'reverse',
-              ease: easing || globalEasing,
-              repeat: Infinity
-            }
-          : undefined
-      }
+      animate={{ opacity: opacityPoints || globalPoints }}
+      transition={{
+        duration: duration || globalDuration,
+        repeatType: 'reverse',
+        ease: easing || globalEasing,
+        repeat: Infinity
+      }}
       style={{
         width: size,
         height: size,
@@ -44,7 +40,7 @@ export const Circle = ({ size = 100, duration, color, opacityPoints, animationTy
         overflow: 'hidden'
       }}
     >
-      {isSlide && (
+      {/* {isSlide && (
         <motion.div
           animate={{ translateX: '2000%' }}
           transition={{
@@ -59,7 +55,7 @@ export const Circle = ({ size = 100, duration, color, opacityPoints, animationTy
             opacity: 0.3
           }}
         />
-      )}
+      )} */}
     </motion.div>
   )
 }

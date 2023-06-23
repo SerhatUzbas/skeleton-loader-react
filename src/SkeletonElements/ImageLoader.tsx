@@ -41,22 +41,18 @@ export const ImageLoader = ({
     opacityPoints: globalPoints
   } = useContext(SkeletonContext)
 
-  const activeAnimType = animationType || globalType
-  const isSlide = activeAnimType === 'slide'
+  // const activeAnimType = animationType || globalType
+  // const isSlide = activeAnimType === 'slide'
 
   return (
     <motion.div
-      animate={!isSlide ? { opacity: opacityPoints || globalPoints } : undefined}
-      transition={
-        !isSlide
-          ? {
-              duration: duration || globalDuration,
-              repeatType: 'reverse',
-              easing: easing || globalEasing,
-              repeat: Infinity
-            }
-          : undefined
-      }
+      animate={{ opacity: opacityPoints || globalPoints }}
+      transition={{
+        duration: duration || globalDuration,
+        repeatType: 'reverse',
+        easing: easing || globalEasing,
+        repeat: Infinity
+      }}
       style={{
         position: 'relative',
         width,
@@ -94,7 +90,7 @@ export const ImageLoader = ({
           </div>
         )}
       </div>
-      {isSlide && (
+      {/* {isSlide && (
         <motion.div
           animate={{ translateX: '1900%' }}
           transition={{
@@ -109,7 +105,7 @@ export const ImageLoader = ({
             opacity: 0.2
           }}
         />
-      )}
+      )} */}
     </motion.div>
   )
 }

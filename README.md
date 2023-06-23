@@ -9,15 +9,16 @@ Requires `React >= 16`
 ## Install
 
 ```bash
-yarn add use-typewriter-animation
+yarn add skeleton-react-loader
+npm i skeleton-react-loader
 ```
 
 </br>
 
-## Usage
+## Components
 
 ```tsx
-const { ref, typewriter } = useTypewriter(options);
+const { ref, typewriter } = useTypewriter(options)
 ```
 
 ```tsx
@@ -27,7 +28,7 @@ typewriter
   .deleteLetters(1)
   .colorize('red')
   .type('Dogu!')
-  .start();
+  .start()
 ```
 
 ```tsx
@@ -71,14 +72,14 @@ typewriter
 
 ```ts
 type TypewriterBaseType = {
-  type: (text: string) => TypewriterBaseType;
-  deleteLetters: (letterCount: number) => TypewriterBaseType;
-  deleteWords: (wordCount: number) => TypewriterBaseType;
-  deleteAll: () => TypewriterBaseType;
-  pauseFor: (duration: number) => TypewriterBaseType;
-  colorize: (color: string) => TypewriterBaseType;
-  start: () => Promise<void>;
-};
+  type: (text: string) => TypewriterBaseType
+  deleteLetters: (letterCount: number) => TypewriterBaseType
+  deleteWords: (wordCount: number) => TypewriterBaseType
+  deleteAll: () => TypewriterBaseType
+  pauseFor: (duration: number) => TypewriterBaseType
+  colorize: (color: string) => TypewriterBaseType
+  start: () => Promise<void>
+}
 ```
 
 </br>
@@ -86,11 +87,11 @@ type TypewriterBaseType = {
 ## Example
 
 ```tsx
-import { useEffect } from 'react';
-import { useTypewriter } from './useTypewriter';
+import { useEffect } from 'react'
+import { useTypewriter } from './useTypewriter'
 
 const Typewriter = () => {
-  const { ref, typewriter } = useTypewriter();
+  const { ref, typewriter } = useTypewriter()
 
   useEffect(() => {
     typewriter
@@ -103,13 +104,13 @@ const Typewriter = () => {
       .colorize('red')
       .type('yellow black white turquoise green')
       .deleteWords(2)
-      .start();
-  }, []);
+      .start()
+  }, [])
 
-  return <div ref={ref} />;
-};
+  return <div ref={ref} />
+}
 
-export default Typewriter;
+export default Typewriter
 ```
 
 > License: MIT

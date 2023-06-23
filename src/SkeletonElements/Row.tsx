@@ -34,7 +34,7 @@ export const Row = ({
   } = useContext(SkeletonContext)
 
   const activeAnimType = animationType || globalType
-  const isSlide = activeAnimType === 'slide'
+  // const isSlide = activeAnimType === 'slide'
 
   const defaultVariant = {
     hidden: { opacity: opacityPoints?.[0] || globalPoints?.[0] },
@@ -51,20 +51,16 @@ export const Row = ({
 
   return (
     <motion.div
-      // initial={!!variants || isSlide ? undefined : 'hidden'}
-      // animate={!!variants || isSlide ? undefined : 'show'}
-      // variants={isSlide ? undefined : variants || defaultVariant}
-      animate={!isSlide ? { opacity: opacityPoints || globalPoints } : undefined}
-      transition={
-        !isSlide
-          ? {
-              duration: duration || globalDuration,
-              repeatType: 'reverse',
-              ease: easing || globalEasing,
-              repeat: Infinity
-            }
-          : undefined
-      }
+      initial={!!variants ? undefined : 'hidden'}
+      animate={!!variants ? undefined : 'show'}
+      variants={variants || defaultVariant}
+      // animate={{ opacity: opacityPoints || globalPoints }}
+      // transition={{
+      //   duration: duration || globalDuration,
+      //   repeatType: 'reverse',
+      //   ease: easing || globalEasing,
+      //   repeat: Infinity
+      // }}
       style={{
         display: 'flex',
         justifyContent: 'flex-start',
@@ -75,7 +71,7 @@ export const Row = ({
         border: 'none'
       }}
     >
-      {isSlide && (
+      {/* {isSlide && (
         <motion.div
           animate={{ translateX: '2000%' }}
           transition={{
@@ -90,7 +86,7 @@ export const Row = ({
             opacity: 0.3
           }}
         />
-      )}
+      )} */}
     </motion.div>
   )
 }

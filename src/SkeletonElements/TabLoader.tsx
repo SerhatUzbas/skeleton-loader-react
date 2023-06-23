@@ -42,7 +42,7 @@ export const TabLoader = ({
 
   const actualTabWidth = `${100 / (tabCount * tabCount)}%`
   const activeAnimType = animationType || globalType
-  const isSlide = activeAnimType === 'slide'
+  // const isSlide = activeAnimType === 'slide'
 
   const defaultVariant = {
     hidden: { opacity: opacityPoints?.[0] || globalPoints?.[0] },
@@ -59,9 +59,9 @@ export const TabLoader = ({
 
   return (
     <motion.div
-      initial={!!variants || isSlide ? undefined : 'hidden'}
-      animate={!!variants || isSlide ? undefined : 'show'}
-      variants={isSlide ? undefined : variants || defaultVariant}
+      initial={!!variants ? undefined : 'hidden'}
+      animate={!!variants ? undefined : 'show'}
+      variants={variants || defaultVariant}
       style={{
         width,
         height,
@@ -84,7 +84,7 @@ export const TabLoader = ({
           }}
         />
       ))}
-      {isSlide && (
+      {/* {isSlide && (
         <motion.div
           animate={{ translateX: '2000%' }}
           transition={{
@@ -102,7 +102,7 @@ export const TabLoader = ({
             top: 0
           }}
         />
-      )}
+      )} */}
     </motion.div>
   )
 }
