@@ -1,4 +1,3 @@
-// import { useElementSize } from '@mantine/hooks' //mantinehook
 import { motion, Easing } from 'framer-motion'
 import { useContext } from 'react'
 import { SkeletonContext } from './StyleProvider.js'

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-
+//Hook that gets element size
 export const useElementSize = () => {
   const [size, setSize] = useState<{ width: number; height: number }>({ width: 0, height: 0 })
   const elementRef = useRef<HTMLDivElement>(null)
