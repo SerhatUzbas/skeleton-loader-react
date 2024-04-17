@@ -1,7 +1,8 @@
-import { useElementSize } from '@mantine/hooks'
+// import { useElementSize } from '@mantine/hooks' //mantinehook
 import { motion, Easing } from 'framer-motion'
 import { useContext } from 'react'
 import { SkeletonContext } from './StyleProvider.js'
+import { useElementSize } from '../useElementSize.js'
 
 export interface ChartLoaderProps {
   width?: string | number
@@ -29,6 +30,7 @@ export const ChartLoader = ({
   isEqualBarHeight,
   radius = 12
 }: ChartLoaderProps) => {
+  // const { ref, width: totalWidth } = useElementSize()
   const { ref, width: totalWidth } = useElementSize()
 
   const {

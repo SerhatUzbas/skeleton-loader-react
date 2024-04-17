@@ -1,11 +1,12 @@
 import { useContext } from 'react'
-import { useElementSize } from '@mantine/hooks'
+// import { useElementSize } from '@mantine/hooks' //mantinehook
 import { Circle, CircleProps } from './Circle.js'
 import { ImageLoader, ImageLoaderProps } from './ImageLoader.js'
 import { Row, RowProps } from './Row.js'
 import { motion } from 'framer-motion'
 import { SkeletonContext } from './StyleProvider.js'
 import { ChartLoader, ChartLoaderProps } from './ChartLoader.js'
+import { useElementSize } from '../useElementSize.js'
 
 interface CompactBarChartProps extends Omit<ChartLoaderProps, 'width'> {
   barChartWidth?: string | number
